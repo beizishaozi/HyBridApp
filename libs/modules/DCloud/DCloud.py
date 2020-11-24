@@ -75,7 +75,7 @@ class DCloud(BaseModule):
 
 
 def main():
-    f = "../../../Checker/test_case/DCloud.apk"
+    f = "../../../test_case/DCloud.apk"
     dCloud = DCloud(f, "android")
     if dCloud.doSigCheck():
         logging.info("DCloud signature Match")

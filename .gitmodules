@@ -1,0 +1,3 @@
+[submodule "libs/modules/APICloud/uzmap_resource_extractor"]
+	path = libs/modules/APICloud/uzmap_resource_extractor
+	url = https://github.com/dm4sec/uzmap-resource-extractor.git

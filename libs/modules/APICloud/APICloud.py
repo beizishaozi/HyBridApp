@@ -58,7 +58,7 @@ class APICloud(BaseModule):
 
 def main():
 
-    f = "../../../Checker/test_case/APICloud.apk"
+    f = "../../../test_case/APICloud.apk"
     apiCloud = APICloud(f, "android")
     if apiCloud.doSigCheck():
         logging.info("APICloud signature Match")
