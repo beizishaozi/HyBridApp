@@ -38,6 +38,7 @@ class DCloud(BaseModule):
 
     def doExtract(self, working_folder):
 
+        # TODO:: should deliberately consider the relative path and absolute path
         extract_folder = os.path.join(os.getcwd(), working_folder, self.hash)
         if os.access(extract_folder, os.R_OK):
             shutil.rmtree(extract_folder)
@@ -60,6 +61,12 @@ class DCloud(BaseModule):
 
         for f in zf.namelist():
             if f.startswith(code_dir):
+                # print(f)
+                # create dir anyway
+
+                td = os.path.dirname(os.path.join(extract_folder, f[len(code_dir): ]))
+                if not os.access(td, os.R_OK):
+                    os.makedirs(td)
                 with open(os.path.join(extract_folder, f[len(code_dir): ]), "wb") as fwh:
                     fwh.write(zf.read(f))
 
@@ -75,7 +82,7 @@ class DCloud(BaseModule):
 
 
 def main():
-    f = "../../../test_case/DCloud.apk"
+    f = "../../../test_case/io.dcloud.PandoraEntry/09b6326e9e730e19383d93647bbc6910fb410b36.apk"
     dCloud = DCloud(f, "android")
     if dCloud.doSigCheck():
         logging.info("DCloud signature Match")

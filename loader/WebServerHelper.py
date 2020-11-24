@@ -32,7 +32,7 @@ class WebServerHelper:
         return
 
 def main():
-    webServerHelper = WebServerHelper("../libs/modules/DCloud/working_folder/1096ff74b471a5f61b842905403b0a430b6b5b58")
+    webServerHelper = WebServerHelper("../libs/modules/DCloud/./working_folder/09b6326e9e730e19383d93647bbc6910fb410b36")
     webServerHelper.startService()
 
     return
