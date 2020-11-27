@@ -91,6 +91,7 @@ class Cordova(BaseModule):
                 launch_path = extract_start_page_by_aapt(self.detect_file, configxml, outputconfigfile)
                 #launch_path = extract_start_page_by_axmlprinter(zf.extract(f), outputconfigfile)
 
+
         # clean env
         shutil.rmtree(tmp_folder)
         return extract_folder, launch_path
